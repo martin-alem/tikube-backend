@@ -22,11 +22,9 @@ import (
 
 func main() {
 
-	if os.Getenv("ENVIRONMENT") == "development" {
-		dotErr := godotenv.Load()
-		if dotErr != nil {
-			log.Fatalf("Error loading .env file: %v", dotErr)
-		}
+	dotErr := godotenv.Load()
+	if dotErr != nil {
+		log.Fatalf("Error loading .env file: %v", dotErr)
 	}
 
 	r := mux.NewRouter()
